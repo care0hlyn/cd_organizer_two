@@ -31,6 +31,7 @@ def artist_menu
   puts "Press 'a' to add new artist to collection."
   puts "Press 'l' to list artists."
   puts "Press 's' to search artists."
+  puts "Press 'm' to go to main menu."
 
   user_decision = gets.chomp
 
@@ -40,9 +41,10 @@ def artist_menu
     list_artist
   elsif user_decision == 's'
     search_artist
+  elsif user_decision == 'm'
+    main_menu
   else
     puts "Invalid."
-    main_menu
   end
 end
 
@@ -97,6 +99,19 @@ def another_album
     @selected_artist.first.add_album(new_album)
     puts "#{new_album.title} has been added\n\n"
     artist_menu
+end
+
+def album_menu
+  puts "Here is your artist + album collection:"
+
+  Artist.all.each_with_index do |artist, index|
+    puts "#{index+1}. #{artist.name}"
+    artist.albums.each do |album|
+      puts album.title
+
+    end
+  end
+  main_menu
 end
 
 main_menu
