@@ -20,6 +20,14 @@ describe Artist do
     test_artist1.save
     expect(Artist.all).to eq [test_artist, test_artist1]
   end
+
+  it 'adds an album to the artist collection' do
+    test_artist = Artist.new({:name => "The Strokes"})
+    test_album = Album.new("Is This It")
+    test_artist.add_album(test_album)
+    expect(test_artist.albums).to eq [test_album]
+    # expect(Album.title).to eq [test_album]
+  end
 end
 
 describe Album do
