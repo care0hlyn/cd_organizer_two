@@ -1,8 +1,12 @@
 class Artists
+  attr_reader :name, :artist
+  # @@artist = []
+  @@album = []
 
-  attr_reader :artist
 
-  def initialize (artist)
-    @artist = artist
+  def initialize (artist_name)
+    @name = artist_name[:name]
+    @@album
   end
+
 end
