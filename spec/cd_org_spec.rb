@@ -26,7 +26,15 @@ describe Artist do
     test_album = Album.new("Is This It")
     test_artist.add_album(test_album)
     expect(test_artist.albums).to eq [test_album]
-    # expect(Album.title).to eq [test_album]
+  end
+
+  it 'displays the albums for a given artist' do
+    test_artist = Artist.new({:name => "Outkast"})
+    test_album = Album.new("Aquemini")
+    test_artist.add_album(test_album)
+    test_album1 = Album.new("ATLiens")
+    test_artist.add_album(test_album1)
+    expect(test_artist.albums).to eq [test_album, test_album1]
   end
 end
 
