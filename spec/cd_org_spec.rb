@@ -20,5 +20,18 @@ describe Artist do
     test_artist1.save
     expect(Artist.all).to eq [test_artist, test_artist1]
   end
+end
+
+describe Album do
+  it 'initializes an album with a title' do
+    test_album = Album.new("Is This It")
+    test_album.should be_an_instance_of Album
+  end
+
+  it 'saves the album to a list' do
+    test_album = Album.new("Is This It")
+    test_album.save
+    expect(Album.all).to eq [test_album]
+  end
 
 end
