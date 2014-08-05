@@ -7,7 +7,7 @@ class Album
   end
 
   def Album.all
-    @@album
+    @@album.sort_by! { |album| album.title.capitalize }
   end
 
   def save

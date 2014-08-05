@@ -8,7 +8,7 @@ class Artist
   end
 
   def Artist.all
-    @@artists
+    @@artists.sort_by! { |artist| artist.name.capitalize }
   end
 
   def add_album(album)
@@ -18,4 +18,5 @@ class Artist
   def save
     @@artists << self
   end
+
 end

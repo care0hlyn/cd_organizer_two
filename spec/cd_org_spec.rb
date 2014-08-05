@@ -14,8 +14,8 @@ describe Artist do
   end
 
   it 'saves new artist to list' do
-    test_artist = Artist.new({:name => "Paul McCartney"})
-    test_artist1 = Artist.new({:name => "Beyonce"})
+    test_artist = Artist.new({:name => "Beyonce"})
+    test_artist1 = Artist.new({:name => "Paul McCartney"})
     test_artist.save
     test_artist1.save
     expect(Artist.all).to eq [test_artist, test_artist1]
